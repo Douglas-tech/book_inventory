@@ -99,7 +99,7 @@ def show_all_books():
 
 # main loop for the program
 while True:
-    print("Welcome to the bookstore clerk program.")
+    print("Welcome to the bookstore clerk program, jou lekker ding!")
     print("Please select an option:")
     print("1. Enter book")
     print("2. Update book")
