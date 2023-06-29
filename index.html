@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bookstore Clerk Program</title>
+</head>
+<body>
+    <h1>Bookstore Clerk Program</h1>
+    <p>Welcome to the bookstore clerk program.</p>
+    <p>Please select an option:</p>
+    <ul>
+        <li><a href="#" onclick="addBook()">Enter book</a></li>
+        <li><a href="#" onclick="updateBook()">Update book</a></li>
+        <li><a href="#" onclick="deleteBook()">Delete book</a></li>
+        <li><a href="#" onclick="searchBooks()">Search books</a></li>
+        <li><a href="#" onclick="showAllBooks()">Show all books in inventory</a></li>
+        <li><a href="#" onclick="exitProgram()">Exit</a></li>
+    </ul>
+
+    <script>
+        function addBook() {
+            var id = prompt("Enter book ID:");
+            var title = prompt("Enter book title:");
+            var author = prompt("Enter book author:");
+            var qty = prompt("Enter book quantity:");
+            var url = "add_book?id=" + id + "&title=" + encodeURIComponent(title) +
+                      "&author=" + encodeURIComponent(author) + "&qty=" + qty;
+
+            // Perform an AJAX request to the server to add the book
+            // You can use any JavaScript library or framework of your choice to handle the request
+            // For simplicity, we'll use the Fetch API in this example
+            fetch(url)
+                .then(function(response) {
+                    if (response.ok) {
+                        alert("Book added successfully.");
+                    } else {
+                        alert("Failed to add the book.");
+                    }
+                })
+                .catch(function(error) {
+                    alert("An error occurred: " + error.message);
+                });
+        }
+
+        // Implement similar functions for updateBook(), deleteBook(), searchBooks(), and showAllBooks()
+
+        function exitProgram() {
+            if (confirm("Are you sure you want to exit?")) {
+                window.close();
+            }
+        }
+    </script>
+</body>
+</html>
