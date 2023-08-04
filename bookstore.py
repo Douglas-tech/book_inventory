@@ -42,6 +42,7 @@ def add_book():
     conn.commit()
     print("Book added successfully.")
 
+
 def update_book():
     id = int(input("Enter book ID: "))
     title = input("Enter new title (press enter to keep current): ")
@@ -66,11 +67,13 @@ def update_book():
     conn.commit()
     print("Book updated successfully.")
 
+
 def delete_book():
     id = int(input("Enter book ID: "))
     conn.execute("DELETE FROM books WHERE id=?", (id,))
     conn.commit()
     print("Book deleted successfully.")
+
 
 def search_books():
     search_term = input("Enter search term: ")
@@ -81,6 +84,7 @@ def search_books():
     else:
         for row in results:
             print("ID: {}, Title: {}, Author: {}, Quantity: {}".format(*row))
+
 
 # function to show all books
 def show_all_books():
@@ -96,6 +100,7 @@ def show_all_books():
 
     # close the database connection
     conn.close()
+
 
 # main loop for the program
 while True:
