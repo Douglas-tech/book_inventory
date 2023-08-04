@@ -31,6 +31,7 @@ conn.execute("INSERT INTO books (id, title, author, qty) \
 
 conn.commit()
 
+
 # define functions for the bookstore clerk program
 def add_book():
     id = int(input("Enter book ID: "))
